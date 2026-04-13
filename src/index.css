@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tailwind Dark Mode */
+.dark {
+  color-scheme: dark;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* Input focus styles */
+input:focus {
+  outline: none;
+}
+
+/* Button base - prevent text selection */
+button {
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+/* Smooth transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Text selection */
+::selection {
+  background-color: rgba(20, 184, 166, 0.2);
+  color: inherit;
+}
+
+.dark ::selection {
+  background-color: rgba(20, 184, 166, 0.3);
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .theme-toggle {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+/* ===== Solid Button Styles ===== */
+
+/* Primary Start Button - Orange Gradient */
+.btn-start {
+  background: linear-gradient(180deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+  color: white;
+  box-shadow: 
+    0 4px 6px -1px rgba(249, 115, 22, 0.3),
+    0 2px 4px -2px rgba(249, 115, 22, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(234, 88, 12, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.btn-start:hover:not(:disabled) {
+  background: linear-gradient(180deg, #fdba74 0%, #fb923c 50%, #f97316 100%);
+  box-shadow: 
+    0 6px 10px -2px rgba(249, 115, 22, 0.4),
+    0 4px 6px -3px rgba(249, 115, 22, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.btn-start:active:not(:disabled) {
+  background: linear-gradient(180deg, #ea580c 0%, #c2410c 100%);
+  box-shadow: 
+    0 2px 3px -1px rgba(249, 115, 22, 0.3),
+    inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+/* Primary Pause Button - Gray */
+.btn-pause {
+  background: linear-gradient(180deg, #64748b 0%, #475569 50%, #334155 100%);
+  color: white;
+  box-shadow: 
+    0 4px 6px -1px rgba(71, 85, 105, 0.3),
+    0 2px 4px -2px rgba(71, 85, 105, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.btn-pause:hover:not(:disabled) {
+  background: linear-gradient(180deg, #94a3b8 0%, #64748b 50%, #475569 100%);
+  box-shadow: 
+    0 6px 10px -2px rgba(71, 85, 105, 0.4),
+    0 4px 6px -3px rgba(71, 85, 105, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.btn-pause:active:not(:disabled) {
+  background: linear-gradient(180deg, #334155 0%, #1e293b 100%);
+  box-shadow: 
+    0 2px 3px -1px rgba(71, 85, 105, 0.3),
+    inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+/* Secondary Button - Light Mode */
+.btn-secondary {
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  color: #475569;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.08),
+    0 2px 4px -2px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.15s ease;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  box-shadow: 
+    0 6px 10px -2px rgba(0, 0, 0, 0.1),
+    0 4px 6px -3px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+  box-shadow: 
+    0 2px 3px -1px rgba(0, 0, 0, 0.08),
+    inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  transform: translateY(1px);
+}
+
+/* Dark mode secondary button */
+.dark .btn-secondary {
+  background: linear-gradient(180deg, #475569 0%, #334155 50%, #1e293b 100%);
+  color: #e2e8f0;
+  box-shadow: 
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -2px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.dark .btn-secondary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #64748b 0%, #475569 50%, #334155 100%);
+  box-shadow: 
+    0 6px 10px -2px rgba(0, 0, 0, 0.4),
+    0 4px 6px -3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.dark .btn-secondary:active:not(:disabled) {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  box-shadow: 
+    0 2px 3px -1px rgba(0, 0, 0, 0.3),
+    inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}
+
+/* Primary Add Button - Teal */
+.btn-primary-add {
+  background: linear-gradient(180deg, #2dd4bf 0%, #14b8a6 50%, #0d9488 100%);
+  color: white;
+  box-shadow: 
+    0 4px 6px -1px rgba(20, 184, 166, 0.3),
+    0 2px 4px -2px rgba(20, 184, 166, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(13, 148, 136, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.15s ease;
+}
+
+.btn-primary-add:hover:not(:disabled) {
+  background: linear-gradient(180deg, #5eead4 0%, #2dd4bf 50%, #14b8a6 100%);
+  box-shadow: 
+    0 6px 10px -2px rgba(20, 184, 166, 0.4),
+    0 4px 6px -3px rgba(20, 184, 166, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.btn-primary-add:active:not(:disabled) {
+  background: linear-gradient(180deg, #0d9488 0%, #0f766e 100%);
+  box-shadow: 
+    0 2px 3px -1px rgba(20, 184, 166, 0.3),
+    inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+}
+
+/* Stats Badge */
+.stats-badge {
+  background: linear-gradient(180deg, rgba(251, 146, 60, 0.15) 0%, rgba(249, 115, 22, 0.1) 100%);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.dark .stats-badge {
+  background: linear-gradient(180deg, rgba(251, 146, 60, 0.25) 0%, rgba(249, 115, 22, 0.15) 100%);
+  border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+/* Disabled state */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  .text-4xl {
+    font-size: 2.25rem;
+  }
+  
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  
+  .text-\[2\.75rem\] {
+    font-size: 2.25rem;
+  }
+}
+
+/* Safe area for mobile devices */
+@supports (padding: max(0px)) {
+  .min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Touch action improvements */
+button, 
+input {
+  touch-action: manipulation;
+}
